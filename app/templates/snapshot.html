@@ -1,0 +1,30 @@
+<section data-page="snapshot" aria-label="双时态截面">
+  <div class="kpis" id="kpis">
+    <div class="kpi focus-kpi"><span>期末应收</span><strong id="k-balance">—</strong><small>应收余额 · CNY</small></div>
+    <div class="kpi"><span>过期应收</span><strong id="k-overdue">—</strong><small>逾期余额 · CNY</small></div>
+    <div class="kpi"><span>累计收款</span><strong id="k-receipts">—</strong><small>期末截面 · CNY</small></div>
+    <div class="kpi"><span>累计冲销</span><strong id="k-reversed">—</strong><small>期末截面 · CNY</small></div>
+    <div class="kpi"><span>待补 / 隔离</span><strong id="k-issues">—</strong><small>期末截面 · 条</small></div>
+  </div>
+  <div class="grid dashboard">
+    <section class="panel axis-panel">
+      <div class="panel-head"><div><h2>有效与知悉时间轴</h2><span class="subtle">来源刻度</span></div><div class="axis-key"><span class="key-dot"></span>变更<span class="key-line"></span>期末切点</div></div>
+      <div class="axis-wrap">
+        <div class="axis" id="axis-effective"></div>
+        <div class="axis" id="axis-known"></div>
+      </div>
+    </section>
+    <section class="panel age-panel">
+      <div class="panel-head"><h2>期末账龄</h2><a class="text-link" href="#aging">发票明细 ↗</a></div>
+      <div class="panel-body" id="age-bars"><p class="empty">正在读取账龄</p></div>
+    </section>
+    <section class="panel invoice-panel">
+      <div class="panel-head"><h2>截面发票</h2><span id="invoice-count" class="subtle mono">—</span></div>
+      <div id="invoice-list" class="scroll-table"></div>
+    </section>
+    <section class="panel issues-panel">
+      <div class="panel-head"><h2>切点证据</h2><span class="subtle">待补 / 隔离</span></div>
+      <div id="cut-issues" class="scroll-table"></div>
+    </section>
+  </div>
+</section>

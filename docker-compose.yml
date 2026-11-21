@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    ports:
+      - "18423:8000"
+    environment:
+      RECEIVABLE_DB: /var/lib/receivable-time/workbench.sqlite3
+    volumes:
+      - workbench:/var/lib/receivable-time
+volumes:
+  workbench:

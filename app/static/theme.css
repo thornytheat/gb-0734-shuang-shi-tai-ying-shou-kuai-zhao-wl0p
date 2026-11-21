@@ -1,0 +1,26 @@
+:root {
+  color-scheme: dark;
+  --bg: #0d1f1a;
+  --rail: #102820;
+  --panel: #142d25;
+  --panel-inner: #10261f;
+  --panel-hover: #1b372d;
+  --line: #325145;
+  --line-soft: #284239;
+  --ink: #eef3e7;
+  --muted: #a9c0b2;
+  --faint: #89a497;
+  --accent: #f2bd62;
+  --accent-ink: #2c1b06;
+  --teal: #8ac6ae;
+  --ok: #a5d6a0;
+  --warn: #f5cd8b;
+  --bad: #ffab9a;
+  --ui: 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  --mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  --pad: 15px;
+  --row: 32px;
+  --gap: 12px;
+  --radius: 5px;
+  --bar: 52px;
+}

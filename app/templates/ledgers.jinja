@@ -1,0 +1,27 @@
+<section data-page="intake" class="grid ledger-grid" hidden>
+  <section class="panel"><div class="panel-head"><h2>变更来源</h2><span class="subtle">UTF-8 / GB18030</span></div>
+    <div class="panel-body"><form id="upload" class="upload-form"><label class="field">选择变更文件<input type="file" name="file" accept=".csv,text/csv" required></label><button class="btn btn-primary" type="submit">导入 CSV</button></form><div id="intake-summary"></div></div>
+  </section>
+  <section class="panel wide-panel"><div class="panel-head"><h2>收件隔离与重复</h2><span class="subtle">来源行</span></div><div id="intake-issues" class="scroll-table"></div></section>
+</section>
+<section data-page="versions" class="grid ledger-grid" hidden>
+  <section class="panel wide-panel"><div class="panel-head"><h2>有效版本</h2><span class="subtle">始日 ≤ 有效日 &lt; 终日</span></div><div id="versions-list" class="scroll-table"></div></section>
+  <section class="panel"><div class="panel-head"><h2>版本冲突</h2></div><div id="versions-issues" class="scroll-table"></div></section>
+</section>
+<section data-page="aging" class="grid ledger-grid" hidden>
+  <section class="panel"><div class="panel-head"><h2>账龄余额</h2></div><div id="aging-summary" class="scroll-table"></div></section>
+  <section class="panel wide-panel"><div class="panel-head"><h2>发票与到期日</h2><label class="field filter">账龄桶<select id="bucket-filter"><option value="">全部</option><option value="current">未逾期</option><option value="d01_30">1–30 天</option><option value="d31_60">31–60 天</option><option value="d61_90">61–90 天</option><option value="d91_plus">91 天以上</option></select></label></div><div id="aging-list" class="scroll-table"></div></section>
+</section>
+<section data-page="backfill" class="grid ledger-grid" hidden>
+  <section class="panel"><div class="panel-head"><h2>期初回补净变动</h2></div><div id="backfill-summary" class="panel-body"></div></section>
+  <section class="panel wide-panel"><div class="panel-head"><h2>迟报及状态变动</h2></div><div id="backfill-list" class="scroll-table"></div></section>
+</section>
+<section data-page="bridge" class="grid ledger-grid" hidden>
+  <section class="panel"><div class="panel-head"><h2>期初至期末</h2><span id="bridge-state" class="subtle">—</span></div><div id="bridge-summary" class="panel-body"></div></section>
+  <section class="panel wide-panel"><div class="panel-head"><h2>账龄桶桥接</h2><span class="subtle">CNY</span></div><div id="bridge-buckets" class="scroll-table"></div></section>
+  <section class="panel span-all"><div class="panel-head"><h2>发票桥接明细</h2></div><div id="bridge-list" class="scroll-table"></div></section>
+</section>
+<section data-page="archive" class="grid ledger-grid" hidden>
+  <section class="panel wide-panel"><div class="panel-head"><h2>归档批次</h2><button id="rerun" class="btn" type="button" disabled>重跑归档</button></div><div id="archive-list" class="scroll-table"></div></section>
+  <section class="panel"><div class="panel-head"><h2>运行清单</h2></div><div id="archive-detail" class="panel-body"><p class="empty">请选择归档批次</p></div></section>
+</section>

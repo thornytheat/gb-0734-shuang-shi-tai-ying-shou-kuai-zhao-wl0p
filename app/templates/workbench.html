@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>双时态应收快照</title>
+  <link rel="stylesheet" href="/static/theme.css">
+  <link rel="stylesheet" href="/static/layout.css">
+  <link rel="stylesheet" href="/static/components.css">
+  <script type="module" src="/static/workbench.js"></script>
+</head>
+<body data-zone="{{ zone }}">
+<div class="app">
+  <aside class="rail">
+    <a href="#snapshot" class="brand"><span class="brand-sign" aria-hidden="true"></span><span>集团应收<small>应收核算工作台</small></span></a>
+    <nav aria-label="业务模块">
+      <div class="rail-label">数据准备</div>
+      <a href="#intake">变更收件</a><a href="#versions">有效版本</a>
+      <div class="rail-label">截面分析</div>
+      <a href="#snapshot" aria-current="page">双时态截面</a><a href="#aging">过期应收</a><a href="#backfill">迟报回补</a>
+      <div class="rail-label">结账</div>
+      <a href="#bridge">期间桥接</a><a href="#archive">快照归档</a>
+    </nav>
+    <div class="rail-foot"><span class="status-dot" aria-hidden="true"></span><div>应收规则<small>{{ version }}</small></div></div>
+  </aside>
+  <div class="work">
+    <header class="topbar">
+      <div class="topbar-context"><span>集团数仓</span><span aria-hidden="true">/</span><span id="crumb">双时态截面</span></div>
+      <div class="actions"><button type="button" id="sample" class="btn">载入样例</button><a id="export" class="btn" aria-disabled="true">导出证据</a><button type="button" id="archive-run" class="btn btn-primary" disabled>归档快照</button></div>
+    </header>
+    <main class="content">
+      <div class="mast"><div><h1>双时态应收快照</h1><p id="heading-period" class="mono">2025-12-31 → 2026-01-31</p></div><dl class="run-meta"><div><dt>数据版本</dt><dd id="source-meta">—</dd></div><div><dt>归档批次</dt><dd id="run-meta">未归档</dd></div><div><dt>归档时间</dt><dd id="time-meta">—</dd></div></dl></div>
+      {% include 'cut-controls.jinja' %}
+      <p class="feedback" id="feedback" role="status" hidden></p>
+      {% include 'snapshot.html' %}
+      {% include 'ledgers.jinja' %}
+    </main>
+    <footer class="statusbar"><span><i class="status-dot" aria-hidden="true"></i><span id="status">正在读取样例</span></span><span>人民币 · UTC{{ zone }} <a href="/docs">接口文档</a></span></footer>
+  </div>
+</div>
+<dialog id="details"><div class="dialog-head"><h2 id="details-title">来源证据</h2><form method="dialog"><button class="btn" type="submit">关闭</button></form></div><div id="details-body"></div></dialog>
+</body>
+</html>
